@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Compra</title>
+</head>
+
+<body>
+    <h1>Teste de Compra</h1>
+    <button onclick="comprarProduto()">Comprar Produto</button>
+    <p id="estoque">Estoque atual: 50</p>
+
+    <script>
+        var estoque = 50;
+
+        function comprarProduto() {
+            let quantidade = parseInt(prompt('Digite a quantidade de produtos que você quer comprar:'));
+
+            if (estoque >= quantidade) {
+                estoque -= quantidade;
+                console.log(`Compra realizada com sucesso! Estoque restante: ${estoque}`);
+                document.getElementById('estoque').innerText = `Estoque atual: ${estoque}`;
+            } else {
+                console.log('Estoque insuficiente.');
+                alert('Estoque insuficiente.');
+            }
+        }
+    </script>
+</body>
+
+</html>
